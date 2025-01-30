@@ -1,22 +1,52 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="bg-black text-white px-10 py-4 flex justify-between items-center">
+    <nav className="text-white px-10 py-4 flex justify-between items-center ">
       <div className="text-2xl font-bold">GridX</div>
-      <div className="flex space-x-10 text-lg text-nav-inactive">
-        <a href="#home" className="hover:text-gray-400 transition">
+      <div className="flex xs:hidden sm:flex font-inter space-x-10 text-lg text-nav-inactive">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "text-gray-400 transition"
+              : "hover:text-gray-400 transition"
+          }
+        >
           Home
-        </a>
-        <a href="#about" className="hover:text-gray-400 transition">
+        </NavLink>
+
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "text-gray-400 transition"
+              : "hover:text-gray-400 transition"
+          }
+        >
           About
-        </a>
-        <a href="#works" className="hover:text-gray-400 transition">
+        </NavLink>
+        <NavLink
+          to="/works"
+          className={({ isActive }) =>
+            isActive
+              ? "text-gray-400 transition"
+              : "hover:text-gray-400 transition"
+          }
+        >
           Works
-        </a>
-        <a href="#contact" className="hover:text-gray-400 transition ">
+        </NavLink>
+        <NavLink
+          to="/contact"
+          className={({ isActive }) =>
+            isActive
+              ? "text-gray-400 transition"
+              : "hover:text-gray-400 transition"
+          }
+        >
           Contact
-        </a>
+        </NavLink>
       </div>
       <button className="bg-second w-[128px] hover:bg-second text-white py-2 px-4 rounded-xl transition">
         Let’s talk
