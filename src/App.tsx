@@ -8,6 +8,7 @@ import TransitionEffect from "./components/TransitionEffect.tsx";
 import Navbar from "./components/Navbar.tsx";
 import Cons from "./components/Cons.tsx";
 import Credential from "./components/Credential.tsx";
+import Projects from "./components/Project.tsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,6 +16,8 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Intro /> },
       { path: "about", element: <Credential /> },
+      { path: "works", element: <Projects /> },
+      { path: "contact", element: <Contact /> },
     ],
   },
 ]);

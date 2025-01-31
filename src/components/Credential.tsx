@@ -54,16 +54,16 @@ export default function Credential() {
 
               <div className="mb-[50px]">
                 <img
-                  src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/me.png"
+                  src="https://firebasestorage.googleapis.com/v0/b/habeshanwall-4dceb.appspot.com/o/another%2Fleetcode-removebg.png?alt=media&token=ccb8c967-cbd8-4d3c-b5f9-beafbf41cfa9"
                   alt=""
-                  className="m-auto rounded-[30px] h-auto max-w-full object-cover"
+                  className="m-auto rounded-[30px] filter brightness-[60%] h-auto max-w-full object-cover"
                 />
               </div>
               <h3 className="font-medium text-[26px] mb-[.5rem] ">
-                David Henderson
+                Yoseph Alemu
               </h3>
               <p className="text-[16px] mb-[34px] opacity-50">
-                @davidhenderson
+                @Yosi64
               </p>
 
               <ul className="flex justify-center gap-4 mb-[36px]">
