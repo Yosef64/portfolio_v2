@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-export default function TransitionEffect() {
+export default function LoadingEffect() {
   return (
     <div className="z-30">
       <motion.div
@@ -22,5 +22,18 @@ export default function TransitionEffect() {
         transition={{ delay: 0.4, duration: 1, ease: "easeInOut" }}
       />
     </div>
+  );
+}
+export function ScaleTranstion({ children, className }: any) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ scale: 0.8 }} // Initial state
+      whileInView={{ scale: 1 }} // Animate when in view
+      transition={{ duration: 0.5 }} // Animation settings
+      viewport={{ once: true, margin: "-120px" }} // Viewport settings
+    >
+      {children}
+    </motion.div>
   );
 }

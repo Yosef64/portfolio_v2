@@ -15,7 +15,7 @@ export default function Footer() {
               <a
                 className="  font-iter"
                 title="Home"
-                href="https://wpriverthemes.com/gridx/"
+                href="/"
               >
                 Home
               </a>
@@ -26,7 +26,7 @@ export default function Footer() {
             >
               <a
                 title="About"
-                href="https://wpriverthemes.com/gridx/about-page/"
+                href="/about"
               >
                 About
               </a>
@@ -35,7 +35,7 @@ export default function Footer() {
               id="menu-item-1859"
               className="menu-item menu-item-type-post_type menu-item-object-page menu-item-1859"
             >
-              <a title="Works" href="https://wpriverthemes.com/gridx/work/">
+              <a title="Works" href="/works">
                 Works
               </a>
             </li>
@@ -45,7 +45,7 @@ export default function Footer() {
             >
               <a
                 title="Contact"
-                href="https://wpriverthemes.com/gridx/contact-info/"
+                href="/contact"
               >
                 Contact
               </a>

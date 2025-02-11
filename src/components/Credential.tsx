@@ -62,17 +62,17 @@ export default function Credential() {
               <h3 className="font-medium text-[26px] mb-[.5rem] ">
                 Yoseph Alemu
               </h3>
-              <p className="text-[16px] mb-[34px] opacity-50">
-                @Yosi64
-              </p>
+              <p className="text-[16px] mb-[34px] opacity-50">@Yosi64</p>
 
               <ul className="flex justify-center gap-4 mb-[36px]">
                 {icons.map((icon) => {
                   return (
-                    <div className="w-12 group/icon hover:bg-white h-12 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
-                      <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
-                      {icon.icon}
-                    </div>
+                    <a href={icon.link}>
+                      <div className="w-12 group/icon hover:bg-white h-12 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
+                        <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
+                        {icon.icon}
+                      </div>
+                    </a>
                   );
                 })}
               </ul>
@@ -117,17 +117,18 @@ export default function Credential() {
                             About Me
                           </h3>
                           <p>
-                            Sit amet luctussd fav venenatis, lectus magna
-                            fringilla inis urna, porttitor rhoncus dolor purus
-                            non enim praesent in elementum sahas facilisis leo,
-                            vel fringilla est ullamcorper eget nulla facilisi
-                            etisam dignissim diam quis enim lobortis viverra
-                            orci sagittis eu volutpat odio facilisis mauris sit.
-                            Scelerisque fermentum duisi faucibus in ornare quam
-                            sisd sit amet luctussd fav venenatis, lectus magna
-                            fringilla zac urna, porttitor rhoncus dolor purus
-                            non enim praesent cuz elementum sahas facilisis
-                            leot.
+                            I am a software engineer with a strong passion for
+                            competitive programming, thriving on challenges and
+                            continuous learning. My journey in tech began with
+                            curiosity and grew into a deep commitment to coding
+                            and problem-solving. Beyond coding, I find
+                            inspiration in music, using it to fuel creativity
+                            and productivity. I constantly seek opportunities to
+                            refine my skills and contribute to meaningful
+                            projects, whether debugging complex algorithms or
+                            crafting efficient software solutions. Balancing
+                            logic and creativity, I stay motivated and
+                            forward-thinking in my pursuit of excellence.
                           </p>{" "}
                         </div>
 

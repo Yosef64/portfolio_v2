@@ -1,4 +1,10 @@
-import { FaGithub, FaInstagram, FaTelegram, FaTwitter } from "react-icons/fa";
+import {
+  FaGithub,
+  FaInstagram,
+  FaTelegram,
+  FaTwitter,
+  FaLinkedin,
+} from "react-icons/fa";
 import { RiTelegram2Line } from "react-icons/ri";
 
 const iconsStyle: string =
@@ -21,14 +27,14 @@ export const exps: Discription[] = [
     title: "Back-end Developer",
     place: "Ethronic",
     description:
-      "Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.",
+      "Focused on backend development using Express.js and PostgreSQL.Gained hands-on experience in building RESTful APIs, managing databases, and optimizing server-side performance.",
   },
   {
     time: "2024 - Present ",
     title: "Student Trainee",
     place: "A2SV | Africa to Slicon Valley",
     description:
-      "Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.",
+      "Developed and optimized backend systems using Python, ensuring efficient data processing and seamless integration with frontend applications.",
   },
 ];
 export const edus = [
@@ -37,14 +43,14 @@ export const edus = [
     title: "Software Engineering",
     place: "Bahir Dar University",
     description:
-      "Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.",
+      "Graduated in Software Engineering (IT Stream) from Bahir Dar University.",
   },
   {
     time: "Jan 2024 - Present ",
     title: "Data structure and algorithm",
     place: "Africa to Slicon Valley",
     description:
-      "Sit amet luctussd fav venenatis, lectus magna fringilla inis urna, porttitor rhoncus dolor purus non enim praesent in elementum sahas facilisis leo, vel fringilla est ullamcorper eget nulla facilisi etisam dignissim diam quis enim lobortis viverra orci sagittis eu volutpat odio facilisis mauris sit.",
+      "Participated in the A2SV program, where I gained my skills in data structures and algorithms. Engaged in competitive programming and problem-solving.",
   },
 ];
 export const skills = [
@@ -135,18 +141,22 @@ export const projects = [
 export const icons = [
   {
     id: 1,
-    icon: <FaTwitter className={iconsStyle} />,
+    icon: <FaLinkedin className={iconsStyle} />,
+    link:"https://www.linkedin.com/in/yoseph-alemu-b92758230/"
   },
   {
     id: 2,
     icon: <FaInstagram className={iconsStyle} />,
+    link:""
   },
   {
     id: 3,
     icon: <FaGithub className={iconsStyle} />,
+    link:"https://github.com/Yosef64"
   },
   {
     id: 4,
     icon: <RiTelegram2Line className={iconsStyle} />,
+    link:"https://t.me/Yosi64"
   },
 ];

@@ -2,9 +2,17 @@ import { BsTelephone } from "react-icons/bs";
 import { SlLocationPin } from "react-icons/sl";
 import { IoMailOutline } from "react-icons/io5";
 import { icons } from "./data";
-
+import { useState } from "react";
+import { sendEmail } from "@/services/EmailServices";
 type InputProps = {
   data: { placeholder: string; name: string; type: string };
+  setUserInfo: Function;
+};
+type UserInfoType = {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
 };
 const inputs = [
   { placeholder: "Name *", name: "name", type: "text" },
@@ -12,19 +20,31 @@ const inputs = [
   { placeholder: "Your Subject *", name: "subject", type: "text" },
   { placeholder: "Your Message *", name: "message", type: "textarea" },
 ];
-const InputGroup = ({ data }: InputProps) => {
+const InputGroup = ({ data, setUserInfo }: InputProps) => {
   return (
     <div className="relative w-full">
       <p className="mb-[1rem] w-full relative">
         <span className="z-2">
           {data.type === "textarea" ? (
             <textarea
+              onChange={(e) =>
+                setUserInfo((prev: UserInfoType) => ({
+                  ...prev,
+                  [data.name]: e.target.value,
+                }))
+              }
               className="w-full z-2 bg-[rgba(0,0,0,0)] h-[145px] focus:outline-none focus:ring-0 text-[14px] block p-4 bg-input-bg rounded-lg text-white placeholder-gray-400"
               placeholder={data.placeholder}
               name={data.name}
             />
           ) : (
             <input
+              onChange={(e) =>
+                setUserInfo((prev: UserInfoType) => ({
+                  ...prev,
+                  [data.name]: e.target.value,
+                }))
+              }
               className="w-full z-2 bg-[rgba(0,0,0,0)] focus:outline-none focus:ring-0 block p-4 bg-input-bg rounded-lg text-white text-[14px]  placeholder-gray-400"
               placeholder={data.placeholder}
               type={data.type}
@@ -38,6 +58,41 @@ const InputGroup = ({ data }: InputProps) => {
 };
 
 export default function Contact() {
+  const [userInfo, setUserInfo] = useState<UserInfoType>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+  const [error, setError] = useState("");
+  async function handleSubmit(event: any): Promise<void> {
+    event.preventDefault();
+    console.log(userInfo);
+
+    if (
+      !userInfo.name ||
+      !userInfo.email ||
+      !userInfo.subject ||
+      !userInfo.message
+    ) {
+      setError("Please fill all the fields");
+      return;
+    }
+    const res = await sendEmail(
+      userInfo.name,
+      userInfo.email,
+      userInfo.subject,
+      userInfo.message
+    );
+    if (res) {
+      setError("Message sent successfully");
+      return;
+    }
+    setError("Failed to send message");
+
+    return;
+  }
+
   return (
     <section className="text-white font-inter ">
       <div className="mx-auto pt-[80px] sm:px-[20px] lg:px-[100px] ">
@@ -55,7 +110,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[14px] opacity-50 text-[#BCBCBC]">
-                    MAIL US
+                    MAIL ME
                   </span>
                   <h5 className="text-white text-[14px] opacity-70 font-medium">
                     yosefale65@gmail.com
@@ -72,7 +127,7 @@ export default function Contact() {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-[14px] opacity-50 text-[#BCBCBC]">
-                    CONTACT US
+                    CONTACT ME
                   </span>
                   <h5 className="text-white text-[16px] opacity-80 font-medium">
                     +251715908007
@@ -133,22 +188,24 @@ export default function Contact() {
                 decoding="async"
                 src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon2.png"
                 alt="Star"
-                className="absolute top-0 right-0"
+                className="absolute top-0 right-10"
               />
               <h2 className="text-[44px] font-medium mb-[30px]">
                 Let’s work <span className="text-blue-500">together.</span>
               </h2>
               <form className="">
                 {inputs.map((input) => {
-                  return <InputGroup data={input} />;
+                  return <InputGroup setUserInfo={setUserInfo} data={input} />;
                 })}
 
                 <a
                   // href="https://wpriverthemes.com/gridx/contact-info/"
+                  onClick={handleSubmit}
                   className="w-full cursor-pointer bg-[#323232] text-center hover:text-black relative inline-block hover:bg-white text-white z-1 transition duration-300 rounded-[10px] text-[16px] font-medium px-[30px] py-[12px]"
                 >
                   Send Message
                 </a>
+                {error && <p className="text-red-500">{error}</p>}
               </form>
             </div>
           </div>
