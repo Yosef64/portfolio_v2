@@ -1,8 +1,7 @@
 import {
   FaGithub,
   FaInstagram,
-  FaTelegram,
-  FaTwitter,
+  
   FaLinkedin,
 } from "react-icons/fa";
 import { RiTelegram2Line } from "react-icons/ri";

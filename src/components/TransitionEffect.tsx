@@ -31,7 +31,7 @@ export function ScaleTranstion({ children, className }: any) {
       initial={{ scale: 0.8 }} // Initial state
       whileInView={{ scale: 1 }} // Animate when in view
       transition={{ duration: 0.5 }} // Animation settings
-      viewport={{ once: true, margin: "-120px" }} // Viewport settings
+      viewport={{ once: true, margin: "-50px" }} // Viewport settings
     >
       {children}
     </motion.div>

@@ -39,6 +39,7 @@ const SmartPhone01Icon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Intro = () => {
   return (
+    
     <div className="p-[5%]">
       <div className="max-w-7xl flex flex-col mx-auto gap-12">
         {/* firt grid         'lg-custom': '920px', // Define a custom breakpoint at 920px
@@ -155,7 +156,7 @@ const Intro = () => {
         {/* Credentials Card */}
         <div className="opacity-100 w-full grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ScaleTranstion className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
-            <div className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
+            <div className="w-full h-full">
               <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
               <div className="flex flex-col p-6 gap-6">
                 <img

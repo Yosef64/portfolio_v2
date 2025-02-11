@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { FaGithub, FaLink } from "react-icons/fa";
 import { projects } from "./data";
 

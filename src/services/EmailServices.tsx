@@ -24,6 +24,7 @@ export async function sendEmail(
     console.error("Email sending error:", error);
     return false;
   }
+  console.log(data, message);
 
   return true;
 }

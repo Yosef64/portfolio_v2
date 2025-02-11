@@ -1,4 +1,3 @@
-import React from "react";
 import { ScaleTranstion } from "./TransitionEffect";
 
 export default function Letswork() {
