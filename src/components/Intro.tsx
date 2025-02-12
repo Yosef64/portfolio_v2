@@ -130,10 +130,7 @@ const Intro = () => {
                         <h2 className="text-[20px] font-medium">Projects</h2>
                       </div>
 
-                      <a
-                        href="/works/"
-                        className="about-btn"
-                      >
+                      <a href="/works/" className="about-btn">
                         <img
                           className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                           decoding="async"
@@ -240,10 +237,7 @@ const Intro = () => {
                     </h2>
                   </div>
 
-                  <a
-                    href="https://wpriverthemes.com/gridx/service-offerings/"
-                    className="about-btn"
-                  >
+                  <a href="/service/" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
