@@ -39,7 +39,6 @@ const SmartPhone01Icon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Intro = () => {
   return (
-    
     <div className="p-[5%]">
       <div className="max-w-7xl flex flex-col mx-auto gap-12">
         {/* firt grid         'lg-custom': '920px', // Define a custom breakpoint at 920px
@@ -101,10 +100,7 @@ const Intro = () => {
                         <h2 className="text-[20px] font-medium">Credentials</h2>
                       </div>
 
-                      <a
-                        href="/about"
-                        className="about-btn"
-                      >
+                      <a href="/about" className="about-btn">
                         <img
                           className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                           decoding="async"
@@ -135,7 +131,7 @@ const Intro = () => {
                       </div>
 
                       <a
-                        href="https://wpriverthemes.com/gridx/work/"
+                        href="/works/"
                         className="about-btn"
                       >
                         <img
@@ -172,10 +168,7 @@ const Intro = () => {
                     <h2 className="text-[20px] font-medium">GFonts</h2>
                   </div>
 
-                  <a
-                    href="https://wpriverthemes.com/gridx/consulted-admitting-is-power-acuteness/"
-                    className="about-btn"
-                  >
+                  <a href="/blog" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
@@ -211,10 +204,7 @@ const Intro = () => {
                     <h2 className="text-[20px] font-medium">Profiles</h2>
                   </div>
 
-                  <a
-                    href="https://wpriverthemes.com/gridx/contact-info/"
-                    className="about-btn"
-                  >
+                  <a href="/contact" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
@@ -269,39 +259,40 @@ const Intro = () => {
 
         {/* Projects Card */}
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
-        <ScaleTranstion>
-          <div className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
-            <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
-            <div className="z-20 relative flex flex-col justify-between p-6 h-full">
-              <div className="grid sm:1 md:grid-cols-3 gap-5">
-                <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
-                  <span className="absolute w-full rounded-[30px] h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
-                  <span className="text-[34px] font-sora">07</span>
-                  <p className="text-[12px] opacity-50 text-[#BCBCBC] uppercase font-inter">
-                    Years <br />
-                    Experience
-                  </p>
-                </div>
-                <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
-                  <span className="absolute rounded-[30px] w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
-                  <span className="text-[34px] font-sora">+125</span>
-                  <p className="text-[12px] opacity-50 text-[#BCBCBC] font-inter uppercase">
-                    CLIENTS <br />
-                    WORLDWIDE
-                  </p>
-                </div>
-                <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
-                  <span className="absolute rounded-[30px]  w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
-                  <span className="text-[34px] font-sora">+210</span>
-                  <p className="opacity-50 text-[#BCBCBC] font-inter text-[12px] uppercase">
-                    Total <br />
-                    Projects
-                  </p>
+          <ScaleTranstion>
+            <div className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
+              <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
+              <div className="z-20 relative flex flex-col justify-between p-6 h-full">
+                <div className="grid sm:1 md:grid-cols-3 gap-5">
+                  <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
+                    <span className="absolute w-full rounded-[30px] h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
+                    <span className="text-[34px] font-sora">07</span>
+                    <p className="text-[12px] opacity-50 text-[#BCBCBC] uppercase font-inter">
+                      Years <br />
+                      Experience
+                    </p>
+                  </div>
+                  <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
+                    <span className="absolute rounded-[30px] w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
+                    <span className="text-[34px] font-sora">+125</span>
+                    <p className="text-[12px] opacity-50 text-[#BCBCBC] font-inter uppercase">
+                      CLIENTS <br />
+                      WORLDWIDE
+                    </p>
+                  </div>
+                  <div className="relative gap-2 p-14 py-8 text-center flex flex-col items-center justify-center">
+                    <span className="absolute rounded-[30px]  w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
+                    <span className="text-[34px] font-sora">+210</span>
+                    <p className="opacity-50 text-[#BCBCBC] font-inter text-[12px] uppercase">
+                      Total <br />
+                      Projects
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div></ScaleTranstion>
-          
+          </ScaleTranstion>
+
           <Letswork />
         </div>
       </div>

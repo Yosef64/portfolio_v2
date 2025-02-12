@@ -78,17 +78,18 @@ export default function Contact() {
       setError("Please fill all the fields");
       return;
     }
-    const res = await sendEmail(
-      userInfo.name,
-      userInfo.email,
-      userInfo.subject,
-      userInfo.message
-    );
-    if (res) {
-      setError("Message sent successfully");
-      return;
+    try {
+      await sendEmail(
+        userInfo.name,
+        userInfo.email,
+        userInfo.subject,
+        userInfo.message
+      );
+      
+    } catch (err) {
+      console.log("Error sending email", err);
+      setError("Failed to send message");
     }
-    setError("Failed to send message");
 
     return;
   }

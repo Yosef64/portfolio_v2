@@ -8,23 +8,20 @@ export async function sendEmail(
   email: string,
   subject: string,
   message: string
-): Promise<boolean> {
-  //   const emailHtml = await render(
-  //     <EmailTemplate name="John Doe" subject={""} message={""} />
-  //   );
+): Promise<void> {
+  
 
-  const { data, error } = await resend.emails.send({
-    from: "josiqlex@gmail.com>",
-    to: [email],
-    subject: subject,
-    html: `<strong>It works! ${name}</strong>`, // Send the rendered HTML
-  });
-
-  if (error) {
-    console.error("Email sending error:", error);
-    return false;
+  try {
+    await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        to: email,
+        subject: subject,
+        text: message,
+      }),
+    });
+  } catch (err) {
+    console.log("Error sending email", err);
   }
-  console.log(data, message);
-
-  return true;
 }
