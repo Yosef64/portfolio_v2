@@ -4,6 +4,7 @@ import Image from "../assets/black_man_avatar1.jpg";
 import Letswork from "./Letswork";
 import { icons } from "./data";
 import { ScaleTranstion } from "./TransitionEffect";
+import { NavLink } from "react-router-dom";
 
 const SmartPhone01Icon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -41,11 +42,9 @@ const Intro = () => {
   return (
     <div className="p-[5%]">
       <div className="max-w-7xl flex flex-col mx-auto gap-12">
-        {/* firt grid         'lg-custom': '920px', // Define a custom breakpoint at 920px
-         */}
         <div className="grid  lg-custom:grid-cols-2 bg-black sm:grid-cols-1 rounded-2xl gap-6 shadow px-1">
           <ScaleTranstion>
-            <div className="font-inter relative text-tx-color bg-[#0F0F0F] rounded-[30px] relative group text-white flex flex-col rounded-[30px] p-12 border border-gray-800  shadow-md">
+            <div className="font-inter cursor-pointer relative text-tx-color bg-[#0F0F0F] rounded-[30px] relative group text-white flex flex-col rounded-[30px] p-12 border border-gray-800  shadow-md">
               {/* <div className="absolute inset-0 rounded-2xl pointer-events-none bg-gradient-to-tl from-black via-transparent to-transparent"></div> */}
               <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
               <div className="flex justify-center xs:flex-col md:flex-row items-center gap-4">
@@ -83,7 +82,7 @@ const Intro = () => {
             </div>
             <div className="opacity-100 grid flex-1 sm:grid-cols-1 md:grid-cols-2 gap-5">
               <ScaleTranstion>
-                <div className="group relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
+                <div className="group  cursor-pointer relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
                   <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
                   <div className=" flex flex-col p-6 gap-6">
                     <img
@@ -100,20 +99,20 @@ const Intro = () => {
                         <h2 className="text-[20px] font-medium">Credentials</h2>
                       </div>
 
-                      <a href="/about" className="about-btn">
+                      <NavLink to="/about" className="about-btn">
                         <img
                           className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                           decoding="async"
                           src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon.svg"
                           alt="Star"
                         />
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
               </ScaleTranstion>
               <ScaleTranstion>
-                <div className="opacity-100 rounded-[30px]">
+                <div className="opacity-100 rounded-[30px] cursor-pointer">
                   <div className="group flex flex-col p-6 gap-6 relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
                     <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
                     <img
@@ -130,14 +129,14 @@ const Intro = () => {
                         <h2 className="text-[20px] font-medium">Projects</h2>
                       </div>
 
-                      <a href="/works/" className="about-btn">
+                      <NavLink to="/works/" className="about-btn">
                         <img
                           className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                           decoding="async"
                           src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon.svg"
                           alt="Star"
                         />
-                      </a>
+                      </NavLink>
                     </div>
                   </div>
                 </div>
@@ -149,7 +148,7 @@ const Intro = () => {
         {/* Credentials Card */}
         <div className="opacity-100 w-full grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ScaleTranstion className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
-            <div className="w-full h-full">
+            <div className="w-full h-full  cursor-pointer">
               <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
               <div className="flex flex-col p-6 gap-6">
                 <img
@@ -165,20 +164,20 @@ const Intro = () => {
                     <h2 className="text-[20px] font-medium">GFonts</h2>
                   </div>
 
-                  <a href="/blog" className="about-btn">
+                  <NavLink to="/blog" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
                       src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon.svg"
                       alt="Star"
                     />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
           </ScaleTranstion>
           <ScaleTranstion className="group bg-[#0F0F0F] opacity-100 md:col-span-1 lg:col-span-2 rounded-[30px]">
-            <div className="w-full h-full">
+            <div className="w-full h-full cursor-pointer">
               <div className=" z-20 relative flex flex-col justify-between p-6 h-full">
                 <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
                 <div className="relative flex gap-6 justify-center items-center p-6 rounded-[30px]">
@@ -201,20 +200,20 @@ const Intro = () => {
                     <h2 className="text-[20px] font-medium">Profiles</h2>
                   </div>
 
-                  <a href="/contact" className="about-btn">
+                  <NavLink to="/contact" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
                       src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon.svg"
                       alt="Star"
                     />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
           </ScaleTranstion>
           <ScaleTranstion className="group bg-[#0F0F0F] opacity-100 col-span-1   rounded-[30px]">
-            <div className="w-full h-full">
+            <div className="w-full h-full cursor-pointer">
               <div className="z-20 relative flex flex-col justify-between p-6 h-full">
                 <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
 
@@ -237,14 +236,14 @@ const Intro = () => {
                     </h2>
                   </div>
 
-                  <a href="/service/" className="about-btn">
+                  <NavLink to="/service/" className="about-btn">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
                       src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon.svg"
                       alt="Star"
                     />
-                  </a>
+                  </NavLink>
                 </div>
               </div>
             </div>
@@ -254,7 +253,7 @@ const Intro = () => {
         {/* Projects Card */}
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
           <ScaleTranstion>
-            <div className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
+            <div className="cursor-pointer relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
               <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
               <div className="z-20 relative flex flex-col justify-between p-6 h-full">
                 <div className="grid sm:1 md:grid-cols-3 gap-5">

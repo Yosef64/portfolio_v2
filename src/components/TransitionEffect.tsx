@@ -3,7 +3,7 @@ export default function LoadingEffect() {
   return (
     <div className="z-30">
       <motion.div
-        className="fixed top-0 bottom-0 right-full w-screen h-screen z-50 bg-custom-purple"
+        className="fixed top-0 bottom-0 right-full w-screen h-screen z-50 bg-t-color"
         initial={{ x: "100%", width: "100%" }}
         animate={{ x: "0%", width: "0%" }}
         transition={{ duration: 1, ease: "easeInOut" }}
