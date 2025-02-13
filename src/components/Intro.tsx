@@ -249,7 +249,7 @@ const Intro = () => {
             </div>
           </ScaleTranstion>
         </div>
-
+                  
         {/* Projects Card */}
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
           <ScaleTranstion>
