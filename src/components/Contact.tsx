@@ -3,7 +3,7 @@ import { SlLocationPin } from "react-icons/sl";
 import { IoMailOutline } from "react-icons/io5";
 import { icons } from "./data";
 import { useState } from "react";
-import { sendEmail } from "@/services/EmailServices";
+// import { sendEmail } from "@/services/EmailServices";
 type InputProps = {
   data: { placeholder: string; name: string; type: string };
   setUserInfo: Function;
@@ -79,13 +79,7 @@ export default function Contact() {
       return;
     }
     try {
-      await sendEmail(
-        userInfo.name,
-        userInfo.email,
-        userInfo.subject,
-        userInfo.message
-      );
-      
+      // await sendEmail();
     } catch (err) {
       console.log("Error sending email", err);
       setError("Failed to send message");

@@ -1,28 +1,28 @@
-// import { Resend } from "resend";
-// import EmailTemplate from "../components/EmailTemplate"; // Import your component
+// // import { Resend } from "resend";
+// // import EmailTemplate from "../components/EmailTemplate"; // Import your component
 
-// const resend = new Resend("re_9rsGC2PE_Jmqr6TWtJwjZTHWPyDnrGTNm");
+// // const resend = new Resend("re_9rsGC2PE_Jmqr6TWtJwjZTHWPyDnrGTNm");
+// import nodemailer from "nodemailer";
 
-export async function sendEmail(
-  name: string,
-  email: string,
-  subject: string,
-  message: string
-): Promise<void> {
-  
+// const transporter = nodemailer.createTransport({
+//   service: "gmail",
+//   auth: {
+//     user: "your-email@gmail.com",
+//     pass: "your-app-password", // Use an app password, NOT your actual password
+//   },
+// });
 
-  try {
-    await fetch("http://localhost:5000/send-email", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        to: email,
-        subject: subject,
-        text: message,
-      }),
-    });
-    console.log(name);
-  } catch (err) {
-    console.log("Error sending email", err);
-  }
-}
+// const mailOptions = {
+//   from: "josiqlex@gmail.com",
+//   to: "yosefale65@gmail.com",
+//   subject: "Test Email",
+//   text: "Hello! This is a test email sent using Nodemailer with ES modules.",
+// };
+// export async function sendEmail() {
+//   try {
+//     const info = await transporter.sendMail(mailOptions);
+//     console.log("Email sent:", info.response);
+//   } catch (error) {
+//     console.error("Error:", error);
+//   }
+// }
