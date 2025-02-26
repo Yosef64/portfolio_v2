@@ -6,7 +6,6 @@ import Cons from "./components/Cons.tsx";
 import Credential from "./components/Credential.tsx";
 import Projects from "./components/Project.tsx";
 import Blog from "./components/Blog.tsx";
-import { motion } from "framer-motion";
 import Offering from "./components/Offereing.tsx";
 
 const router = createBrowserRouter([
@@ -23,11 +22,7 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-const pageVariants = {
-  initial: { opacity: 0, x: 100 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0, x: -100 },
-};
+
 export default function App() {
   return (
     <>
