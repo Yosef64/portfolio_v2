@@ -1,8 +1,9 @@
 import { ApiMessageType, UserInfoType } from "@/components/model";
 
 export async function sendEmail(data: UserInfoType): Promise<ApiMessageType> {
+  const API_URL = import.meta.env.VITE_API_URL;
   try {
-    const info = await fetch("http://localhost:5000/send-email", {
+    const info = await fetch(API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

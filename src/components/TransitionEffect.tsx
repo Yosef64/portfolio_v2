@@ -28,10 +28,10 @@ export function ScaleTranstion({ children, className }: any) {
   return (
     <motion.div
       className={className}
-      initial={{ scale: 0.8 }} 
-      whileInView={{ scale: 1 }} 
+      initial={{ scale: 0.8 }}
+      whileInView={{ scale: 1 }}
       transition={{ duration: 0.5 }}
-      viewport={{ once: true, margin: "-50px" }} 
+      viewport={{ once: true, margin: "-50px" }}
     >
       {children}
     </motion.div>
@@ -46,11 +46,12 @@ export function SuccessMessageTransition({
 }: NotificationAnimationProps) {
   const notificationVariants = {
     hidden: { y: 100, opacity: 0 },
-    visible: { y: 0, opacity: 1 }, 
-    exit: { y: 100, opacity: 0 }, 
+    visible: { y: 0, opacity: 1 },
+    exit: { y: 100, opacity: 0 },
   };
   return (
     <motion.div
+      className="fixed bottom-0 right-0 h-12 w-12 "
       variants={notificationVariants}
       initial="hidden"
       animate="visible"
