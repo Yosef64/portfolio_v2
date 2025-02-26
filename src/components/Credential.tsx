@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import {
   awards,
   Discription,
@@ -77,12 +78,12 @@ export default function Credential() {
                 })}
               </ul>
 
-              <a
-                // href="https://wpriverthemes.com/gridx/contact-info/"
-                className="w-full bg-[#323232] hover:text-black relative inline-block hover:bg-white text-white z-1 transition duration-300 rounded-[16px] text-[16px] font-medium px-[30px] py-[12px]"
+              <NavLink
+                to="/contact"
+                className="w-full cursor-pointer bg-[#323232] hover:text-black relative inline-block hover:bg-white text-white z-1 transition duration-300 rounded-[16px] text-[16px] font-medium px-[30px] py-[12px]"
               >
                 Contact Me
-              </a>
+              </NavLink>
             </div>
           </div>
         </div>

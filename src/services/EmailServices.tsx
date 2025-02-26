@@ -1,28 +1,16 @@
-// // import { Resend } from "resend";
-// // import EmailTemplate from "../components/EmailTemplate"; // Import your component
+import { ApiMessageType, UserInfoType } from "@/components/model";
 
-// // const resend = new Resend("re_9rsGC2PE_Jmqr6TWtJwjZTHWPyDnrGTNm");
-// import nodemailer from "nodemailer";
-
-// const transporter = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: "your-email@gmail.com",
-//     pass: "your-app-password", // Use an app password, NOT your actual password
-//   },
-// });
-
-// const mailOptions = {
-//   from: "josiqlex@gmail.com",
-//   to: "yosefale65@gmail.com",
-//   subject: "Test Email",
-//   text: "Hello! This is a test email sent using Nodemailer with ES modules.",
-// };
-// export async function sendEmail() {
-//   try {
-//     const info = await transporter.sendMail(mailOptions);
-//     console.log("Email sent:", info.response);
-//   } catch (error) {
-//     console.error("Error:", error);
-//   }
-// }
+export async function sendEmail(data: UserInfoType): Promise<ApiMessageType> {
+  try {
+    const info = await fetch("http://localhost:5000/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return { message: info.ok };
+  } catch (error) {
+    return { message: false };
+  }
+}

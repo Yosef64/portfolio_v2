@@ -1,4 +1,4 @@
-import  { useState } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
@@ -77,10 +77,11 @@ export default function Navbar() {
           ))}
         </div>
       )}
-
-      <button className="hidden md:block bg-second w-[128px] font-inter hover:bg-second text-white py-2 px-4 rounded-xl transition">
-        Let’s talk
-      </button>
+      <NavLink to="/contact">
+        <button className="hidden transition duration-300 md:block bg-second  w-[128px] font-inter hover:bg-white hover:text-black text-white py-2 px-4 rounded-xl transition">
+          Let’s talk
+        </button>
+      </NavLink>
     </nav>
   );
 }

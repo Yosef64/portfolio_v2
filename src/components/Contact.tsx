@@ -3,24 +3,22 @@ import { SlLocationPin } from "react-icons/sl";
 import { IoMailOutline } from "react-icons/io5";
 import { icons } from "./data";
 import { useState } from "react";
-// import { sendEmail } from "@/services/EmailServices";
-type InputProps = {
-  data: { placeholder: string; name: string; type: string };
-  setUserInfo: Function;
-};
-type UserInfoType = {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-};
-const inputs = [
+import { sendEmail } from "@/services/EmailServices";
+import { InputProps, UserInfoType } from "./model";
+import { GiCheckMark } from "react-icons/gi";
+import { SuccessMessageTransition } from "./TransitionEffect";
+
+const inputs: {
+  placeholder: string;
+  name: keyof UserInfoType;
+  type: string;
+}[] = [
   { placeholder: "Name *", name: "name", type: "text" },
   { placeholder: "Email *", name: "email", type: "email" },
   { placeholder: "Your Subject *", name: "subject", type: "text" },
   { placeholder: "Your Message *", name: "message", type: "textarea" },
 ];
-const InputGroup = ({ data, setUserInfo }: InputProps) => {
+const InputGroup = ({ data, setUserInfo, userInfo }: InputProps) => {
   return (
     <div className="relative w-full">
       <p className="mb-[1rem] w-full relative">
@@ -49,6 +47,7 @@ const InputGroup = ({ data, setUserInfo }: InputProps) => {
               placeholder={data.placeholder}
               type={data.type}
               name={data.name}
+              value={userInfo[data.name] || ""}
             />
           )}
         </span>
@@ -65,9 +64,10 @@ export default function Contact() {
     message: "",
   });
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   async function handleSubmit(event: any): Promise<void> {
     event.preventDefault();
-    console.log(userInfo);
 
     if (
       !userInfo.name ||
@@ -78,12 +78,28 @@ export default function Contact() {
       setError("Please fill all the fields");
       return;
     }
-    try {
-      // await sendEmail();
-    } catch (err) {
-      console.log("Error sending email", err);
-      setError("Failed to send message");
-    }
+    setLoading(true);
+
+    sendEmail(userInfo)
+      .then((data) => {
+        if (!data.message) {
+          // Handle error
+          setError("Someting went wrong please try again");
+        } else {
+          setSuccess(true);
+          setTimeout(() => {
+            setSuccess(false);
+          }, 5000);
+          setUserInfo({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+          });
+        }
+      })
+      .catch((err) => console.error(err))
+      .finally(() => setLoading(false));
 
     return;
   }
@@ -164,10 +180,12 @@ export default function Contact() {
                     return;
                   }
                   return (
-                    <div className="sm:w-16 xs:w-10 xs:h-10 group/icon hover:bg-white sm:h-16 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
-                      <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-25 bg-bg-gr backdrop-blur-[40px]"></span>
-                      {icon.icon}
-                    </div>
+                    <a href={icon.link}>
+                      <div className="sm:w-16 xs:w-10 xs:h-10 group/icon hover:bg-white sm:h-16 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
+                        <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-25 bg-bg-gr backdrop-blur-[40px]"></span>
+                        {icon.icon}
+                      </div>
+                    </a>
                   );
                 })}
               </li>
@@ -190,22 +208,46 @@ export default function Contact() {
               </h2>
               <form className="">
                 {inputs.map((input) => {
-                  return <InputGroup setUserInfo={setUserInfo} data={input} />;
+                  return (
+                    <InputGroup
+                      userInfo={userInfo}
+                      setUserInfo={setUserInfo}
+                      data={input}
+                    />
+                  );
                 })}
 
-                <a
-                  // href="https://wpriverthemes.com/gridx/contact-info/"
+                <button
                   onClick={handleSubmit}
-                  className="w-full cursor-pointer bg-[#323232] text-center hover:text-black relative inline-block hover:bg-white text-white z-1 transition duration-300 rounded-[10px] text-[16px] font-medium px-[30px] py-[12px]"
+                  disabled={loading}
+                  className={`w-full cursor-pointer bg-[#323232] text-center hover:text-black relative inline-block hover:bg-white text-white transition duration-300 rounded-[10px] text-[16px] font-medium px-[30px] py-[12px] ${
+                    loading ? "opacity-50 cursor-not-allowed" : ""
+                  }`}
                 >
-                  Send Message
-                </a>
+                  {loading ? "Sending..." : "Send Message"}
+                </button>
                 {error && <p className="text-red-500">{error}</p>}
               </form>
             </div>
           </div>
         </div>
       </div>
+      {success && (
+        <SuccessMessageTransition>
+          <div className="fixed bottom-5 right-5 h-20 w-[400px] bg-second font-sora text-white rounded-[20px] flex items-center px-5 shadow-lg">
+            <div className="relative flex items-center h-full w-full gap-4">
+              <GiCheckMark size={30} color="#10B981" />
+              <p className="opacity-80">Thank you for the message!</p>
+              <img
+                decoding="async"
+                src="https://wpriverthemes.com/gridx/wp-content/themes/gridx/assets/images/icon2.png"
+                alt="Star"
+                className="absolute top-0 right-0 w-7 h-12"
+              />
+            </div>
+          </div>
+        </SuccessMessageTransition>
+      )}
     </section>
   );
 }

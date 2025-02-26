@@ -16,7 +16,8 @@ export default {
           "linear-gradient(120deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.05))",
         "bg-gr":
           "linear-gradient(120deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1))",
-          "input-bg":"linear-gradient(120deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01))",
+        "input-bg":
+          "linear-gradient(120deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01))",
         "bg-gr1":
           "linear-gradient(120deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.01))",
         img: "linear-gradient(90deg, rgb(91, 120, 246) -15%, rgb(194, 235, 255) 58%, rgb(91, 120, 246) 97%)",

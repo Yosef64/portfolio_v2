@@ -40,7 +40,7 @@ const SmartPhone01Icon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Intro = () => {
   return (
-    <div className="p-[5%]">
+    <div className="px-[100px] py-[80px]">
       <div className="max-w-7xl flex flex-col mx-auto gap-12">
         <div className="grid  lg-custom:grid-cols-2 bg-black sm:grid-cols-1 rounded-2xl gap-6 shadow px-1">
           <ScaleTranstion>
@@ -148,7 +148,7 @@ const Intro = () => {
         {/* Credentials Card */}
         <div className="opacity-100 w-full grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           <ScaleTranstion className="relative text-tx-color bg-[#0F0F0F] rounded-[30px]">
-            <div className="w-full h-full  cursor-pointer">
+            <div className="w-full group h-full  cursor-pointer">
               <span className="absolute w-full h-full top-0 bg-bg-gr2 left-0 opacity-25 "></span>
               <div className="flex flex-col p-6 gap-6">
                 <img
@@ -164,7 +164,7 @@ const Intro = () => {
                     <h2 className="text-[20px] font-medium">GFonts</h2>
                   </div>
 
-                  <NavLink to="/blog" className="about-btn">
+                  <NavLink to="/blog" className="">
                     <img
                       className="w-12 h-12 group-hover:brightness-100 filter brightness-[30%] transition duration-300 ease-in-out"
                       decoding="async"
@@ -185,10 +185,12 @@ const Intro = () => {
 
                   {icons.map((icon) => {
                     return (
-                      <div className="sm:w-16 xs:w-10 xs:h-10 group/icon hover:bg-white sm:h-16 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
-                        <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-10 bg-bg-gr backdrop-blur-[40px]"></span>
-                        {icon.icon}
-                      </div>
+                      <a href={icon.link} key={icon.id}>
+                        <div className="sm:w-16 xs:w-10 xs:h-10 group/icon hover:bg-white sm:h-16 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
+                          <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-10 bg-bg-gr backdrop-blur-[40px]"></span>
+                          {icon.icon}
+                        </div>
+                      </a>
                     );
                   })}
                 </div>
@@ -249,7 +251,7 @@ const Intro = () => {
             </div>
           </ScaleTranstion>
         </div>
-                  
+
         {/* Projects Card */}
         <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
           <ScaleTranstion>

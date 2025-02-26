@@ -26,17 +26,27 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <div className="flex gap-2">
-                    <div className="w-10 group/icon hover:bg-white h-10 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
-                      <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
-                      <FaGithub className="text-white group-hover/icon:text-black transition duration-300" />
-                    </div>
-                    <div className="w-10 group/icon hover:bg-white h-10 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
-                      <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
-                      <FaLink className="text-white group-hover/icon:text-black transition duration-300" />
-                    </div>
+                    <a href={project.git}>
+                      <div className="w-12 group/icon hover:bg-white h-12 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
+                        <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
+                        <FaGithub
+                          size={20}
+                          className="text-white group-hover/icon:text-black transition duration-300"
+                        />
+                      </div>
+                    </a>
+                    <a href={project.live}>
+                      <div className="w-12 group/icon hover:bg-white h-12 flex items-center justify-center rounded-full relative shadow-[0_4px_24px_-1px_rgba(0,0,0,0.1)] border border-white/10 text-white transition duration-300">
+                        <span className="absolute  w-full h-full inset-0 rounded-full z-10 opacity-30 bg-bg-gr1 backdrop-blur-[40px]"></span>
+                        <FaLink
+                          size={17}
+                          className="text-white group-hover/icon:text-black transition duration-300"
+                        />
+                      </div>
+                    </a>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm text-white">
+                <p className="text-white opacity-80  text-[14px] font-inter">
                   {project.desc}
                 </p>
               </div>

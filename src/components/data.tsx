@@ -1,9 +1,5 @@
-import {
-  FaGithub,
-  FaInstagram,
-  
-  FaLinkedin,
-} from "react-icons/fa";
+import { SmartPhone01Icon, WebDesign02Icon } from "hugeicons-react";
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { RiTelegram2Line } from "react-icons/ri";
 
 const iconsStyle: string =
@@ -86,7 +82,7 @@ export const projects = [
     git: "https://github.com/Yosef64/Rental_Website",
     isLive: true,
     live: "https://jorent.vercel.app/",
-    stacks: ["React", "Node.js", "MongoDB"],
+    stacks: ["React", "Node.js", "Firebase","Material Ui","Next.js"],
   },
   {
     id: 1,
@@ -95,7 +91,7 @@ export const projects = [
     desc: "A rental mobile app helping house owners find tenants. It's an ongoing project I'm currently working on.",
     git: "https://github.com/Yosef64/RentApp",
     isLive: false,
-    stacks: ["React", "Node.js", "MongoDB"],
+    stacks: ["Flutter", "Node.js", "Firebase"],
   },
   {
     id: 3,
@@ -104,7 +100,7 @@ export const projects = [
     desc: "A React Native wallpaper app showcasing impressive Habeshan images.",
     git: "https://github.com/Yosef64/wallpaper",
     isLive: false,
-    stacks: ["React", "Node.js", "MongoDB"],
+    stacks: ["React Native", "Node.js", "Firebase"],
   },
   {
     id: 4,
@@ -114,7 +110,7 @@ export const projects = [
     git: "https://github.com/Yosef64/portfolio",
     isLive: true,
     live: "https://josialex.vercel.app/",
-    stacks: ["React", "Node.js", "MongoDB"],
+    stacks: ["React",],
   },
   {
     id: 5,
@@ -141,21 +137,51 @@ export const icons = [
   {
     id: 1,
     icon: <FaLinkedin className={iconsStyle} />,
-    link:"https://www.linkedin.com/in/yoseph-alemu-b92758230/"
+    link: "https://www.linkedin.com/in/yoseph-alemu-b92758230/",
   },
   {
     id: 2,
     icon: <FaInstagram className={iconsStyle} />,
-    link:""
+    link: "https://www.instagram.com/yosefale65/",
   },
   {
     id: 3,
     icon: <FaGithub className={iconsStyle} />,
-    link:"https://github.com/Yosef64"
+    link: "https://github.com/Yosef64",
   },
   {
     id: 4,
     icon: <RiTelegram2Line className={iconsStyle} />,
-    link:"https://t.me/Yosi64"
+    link: "https://t.me/Yosi64",
+  },
+];
+
+export const offering = [
+  {
+    id: 1,
+    title: "Web Development",
+    icon: (
+      <WebDesign02Icon
+        size={40}
+        color={"#fff"}
+        // variant={"stroke"}
+      />
+    ),
+  },
+  {
+    id: 2,
+    title: "Mobile App Development",
+    icon: <SmartPhone01Icon size={40} color={"#fff"} />,
+  },
+];
+
+export const offeringDes = [
+  {
+    title: "Web Development",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel metus scelerisque ante sollicitudin. ",
+  },
+  {
+    title: "Mobile Development",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel metus scelerisque ante sollicitudin. ",
   },
 ];
