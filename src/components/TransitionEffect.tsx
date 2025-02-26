@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+
+type AnimationChildrentProps = {
+  children: React.ReactNode;
+};
+
 export default function LoadingEffect() {
   return (
     <div className="z-30">
@@ -37,13 +42,10 @@ export function ScaleTranstion({ children, className }: any) {
     </motion.div>
   );
 }
-type NotificationAnimationProps = {
-  children: React.ReactNode;
-};
 
 export function SuccessMessageTransition({
   children,
-}: NotificationAnimationProps) {
+}: AnimationChildrentProps) {
   const notificationVariants = {
     hidden: { y: 100, opacity: 0 },
     visible: { y: 0, opacity: 1 },
@@ -58,6 +60,26 @@ export function SuccessMessageTransition({
       exit="exit"
       transition={{ duration: 0.3 }}
     >
+      {children}
+    </motion.div>
+  );
+}
+
+export function ResponsiveNavbarTransition({
+  children,
+}: AnimationChildrentProps) {
+  const notificationVariants = {
+    hidden: { y: 100, opacity: 0 },
+    visible: { y: 0, opacity: 1 },
+    exit: { y: 100, opacity: 0 },
+  };
+  return (
+    <motion.div
+      variants={notificationVariants}
+      initial="hidden"
+      animate="animate"
+      exit="exit"
+      transition={{ duration: 0.3 }}>
       {children}
     </motion.div>
   );
