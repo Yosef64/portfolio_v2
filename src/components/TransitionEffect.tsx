@@ -69,17 +69,19 @@ export function ResponsiveNavbarTransition({
   children,
 }: AnimationChildrentProps) {
   const notificationVariants = {
-    hidden: { y: 100, opacity: 0 },
+    hidden: { y: "-100%", opacity: 0 },
     visible: { y: 0, opacity: 1 },
-    exit: { y: 100, opacity: 0 },
+    exit: { y: "-100%", opacity: 0 },
   };
   return (
     <motion.div
       variants={notificationVariants}
       initial="hidden"
-      animate="animate"
+      animate="visible"
       exit="exit"
-      transition={{ duration: 0.3 }}>
+      transition={{ duration: 0.7 }}
+      className="fixed top-16 w-full h-full z-40"
+    >
       {children}
     </motion.div>
   );

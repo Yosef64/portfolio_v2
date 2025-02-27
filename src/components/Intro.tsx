@@ -40,7 +40,7 @@ const SmartPhone01Icon = (props: React.SVGProps<SVGSVGElement>) => (
 
 const Intro = () => {
   return (
-    <div className="px-[100px] py-[80px]">
+    <div className="lg:px-[100px] md:px-[40px] xs:px-[20px]  py-[80px]">
       <div className="max-w-7xl flex flex-col mx-auto gap-12">
         <div className="grid  lg-custom:grid-cols-2 bg-black sm:grid-cols-1 rounded-2xl gap-6 shadow px-1">
           <ScaleTranstion>

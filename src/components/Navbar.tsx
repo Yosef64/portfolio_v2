@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { ResponsiveNavbarTransition } from "./TransitionEffect";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,24 +33,24 @@ export default function Navbar() {
 
       {/* Mobile Menu Button */}
       <div
-        className="cursor-pointer md:hidden flex flex-col  justify-between h-[18px] w-[25px] text-white text-2xl"
+        className="cursor-pointer z-45 md:hidden flex flex-col transition-all duration-1000 ease-in-out justify-between h-[18px] w-[25px] text-white text-2xl"
         onClick={() => {
           console.log("Menu button clicked, toggling state");
           setIsOpen(!isOpen);
         }}
       >
         <span
-          className={`block h-[1px] w-full bg-white transition-transform ${
+          className={`block h-[1px] w-full bg-white transition-all duration-300 ease-in-out ${
             isOpen ? "transform rotate-45 translate-y-2" : ""
           }`}
         />
         <span
-          className={`block h-[1px] w-full bg-white transition-opacity ${
+          className={`block h-[1px] w-full bg-white transition-all duration-300 ease-in-out ${
             isOpen ? "opacity-0" : ""
           }`}
         />
         <span
-          className={`block h-[1px] w-full bg-white transition-transform ${
+          className={`block h-[1px] w-full bg-white transition-all duration-300 ease-in-out ${
             isOpen ? "transform -rotate-45 -translate-y-2" : ""
           }`}
         />
@@ -57,31 +58,32 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="absolute top-16 left-0 w-full bg-black z-40 text-inter flex flex-col items-center space-y-6 py-6 md:hidden">
-          {["Home", "About", "Works", "Contact"].map((item) => (
-            <NavLink
-              key={item}
-              to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
-              className={({ isActive }) => {
-                return isActive
-                  ? "text-white text-lg transition"
-                  : "hover:text-gray-400 text-lg opacity-50 transition";
-              }}
-              onClick={() => {
-                console.log(`${item} link clicked, closing menu`);
-                setIsOpen(false);
-              }}
-            >
-              {item}
-            </NavLink>
-          ))}
-        </div>
+        <ResponsiveNavbarTransition>
+          <div className="fixed top-16 w-full bg-black z-40 text-inter flex flex-col  items-center space-y-6 py-6 md:hidden">
+            {["Home", "About", "Works", "Contact"].map((item) => (
+              <NavLink
+                key={item}
+                to={item == "Home" ? "/" : `/${item.toLowerCase()}`}
+                className={({ isActive }) => {
+                  return isActive
+                    ? "text-white text-lg transition"
+                    : "hover:text-gray-400 text-lg opacity-50 transition";
+                }}
+                onClick={() => {
+                  console.log(`${item} link clicked, closing menu`);
+                  setIsOpen(false);
+                }}
+              >
+                {item}
+              </NavLink>
+            ))}
+          </div>
+        </ResponsiveNavbarTransition>
       )}
-      <NavLink to="/contact">
-        <button className="hidden transition duration-300 md:block bg-second  w-[128px] font-inter hover:bg-white hover:text-black text-white py-2 px-4 rounded-xl transition">
-          Let’s talk
-        </button>
-      </NavLink>
+
+      <button className="hidden md:block bg-second w-[128px] font-inter hover:bg-second text-white py-2 px-4 rounded-xl transition">
+        Let’s talk
+      </button>
     </nav>
   );
 }

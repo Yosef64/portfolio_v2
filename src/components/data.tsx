@@ -50,24 +50,29 @@ export const edus = [
 ];
 export const skills = [
   {
-    top: "85%",
+    top: "95%",
     mid: "Python",
     bot: "Data analysis and Back-end",
   },
   {
-    top: "60%",
+    top: "80%",
     mid: "JavaScript",
-    bot: "Lorem",
+    bot: "Web and Mobile Development",
+  },
+  {
+    top: "80%",
+    mid: "Dart",
+    bot: "Flutter",
   },
 ];
 export const awards = [
   {
-    top: "14 May 2020",
-    mid: "Bluebase",
-    bot: "Non enim praesent",
+    top: "May 2024",
+    mid: "Top problem solver of 2024",
+    bot: "Leetcode",
   },
   {
-    top: "14 May 2020",
+    top: "May 2023",
     mid: "Bluebase",
     bot: "Non enim praesent",
   },
@@ -82,7 +87,7 @@ export const projects = [
     git: "https://github.com/Yosef64/Rental_Website",
     isLive: true,
     live: "https://jorent.vercel.app/",
-    stacks: ["React", "Node.js", "Firebase","Material Ui","Next.js"],
+    stacks: ["React", "Node.js", "Firebase", "Material Ui", "Next.js"],
   },
   {
     id: 1,
@@ -110,7 +115,7 @@ export const projects = [
     git: "https://github.com/Yosef64/portfolio",
     isLive: true,
     live: "https://josialex.vercel.app/",
-    stacks: ["React",],
+    stacks: ["React"],
   },
   {
     id: 5,
@@ -178,10 +183,10 @@ export const offering = [
 export const offeringDes = [
   {
     title: "Web Development",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel metus scelerisque ante sollicitudin. ",
+    desc: "Let’s bring your ideas to life with a stunning website! Whether you need a sleek portfolio, a dynamic web app, or an e-commerce platform, I’ve got you covered. I work with modern frameworks like React and Next.js, plus powerful backend tools like Node.js and Django, to make sure your site is fast, secure, and easy to use. Oh, and it’ll look amazing on any device—because who likes a clunky website? 🤯",
   },
   {
     title: "Mobile Development",
-    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel metus scelerisque ante sollicitudin. ",
+    desc: "Want to launch the next big app? I’ll turn your vision into a fully functional mobile experience using Flutter, so your app runs smoothly on both iOS and Android. My goal is to build apps that not only work like a charm but also keep users engaged with top-notch UI/UX design. Let’s make your app idea a reality!",
   },
 ];
