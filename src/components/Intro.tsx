@@ -61,7 +61,7 @@ const Intro = () => {
                     Yoseph Alemu
                   </h2>
                   <p className="text-gray-300 text-[14px] block tracking-[0.3px]  opacity-70">
-                    I am a Web Designer based in EveryWhere.
+                    I am a Full-stack Engineer based in EveryWhere.
                   </p>
                 </div>
               </div>

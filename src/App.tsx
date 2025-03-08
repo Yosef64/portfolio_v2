@@ -26,16 +26,7 @@ const router = createBrowserRouter([
 export default function App() {
   return (
     <>
-      {/* <motion.div
-        key={location.pathname}
-        variants={pageVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 1 }}
-      > */}
-        <RouterProvider router={router} />
-      {/* </motion.div> */}
+      <RouterProvider router={router} />
     </>
   );
 }
